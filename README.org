@@ -1,0 +1,6 @@
+* Pure joy that comes from learning Clojure!
+
+  Store for Exercism jobs I complete on Clojure track.
+
+  Although I do exercise on Mentored mode I just mark exercise
+  done if all of the tests pass.
