@@ -4,3 +4,14 @@
 
   Although I do exercise on Mentored mode I just mark exercise
   done if all of the tests pass.
+
+** Agenda
+   The plan is to just to do small part of Clojure exercises
+   in order to keep the contribution to the GitHub repository and
+   still be on the learning track. Consistency is a key, they say.
+
+*** Fix the Armstrong Numbers solution according to the mentor's feedback
+   https://exercism.io/my/solutions/85eff4ea1855455badb99ac75c1221ab
+
+*** Nucleotide count exercise
+   as a new one to the repository.
