@@ -11,5 +11,5 @@
    still be on the learning track. Consistency is a key, they say.
 
 ** TODO
-   - Fix the Armstrong Numbers solution according to the mentor's [[]https://exercism.io/my/solutions/85eff4ea1855455badb99ac75c1221ab][feedback]].
+   - Fix the Armstrong Numbers solution according to the mentor's [[https://exercism.io/my/solutions/85eff4ea1855455badb99ac75c1221ab][feedback]].
    - Nucleotide count exercise as a new one to the repository.
