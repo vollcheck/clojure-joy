@@ -1,13 +1,21 @@
 (ns bob
-  :require [clojure.string :as str])
+  (:require [clojure.string :refer [trimr upper-case]]))
+
+
+(defn upper? [s]
+  (= s (str/upper-case s)))
+
+
+(def ends-w-? #(= (last %) \?))
+
 
 (defn response-for
-  [s]
-  (let [n-s (str/trimr s)]
-    (case n-s
-      (empty? n-s) "Fine. Be that way!"
-      (upper? n-s) (if (= (last s) \?)
-                     "Calm down, I know what I'm doing!"
-                     "Whoa, chill out!")
-      (= (last s) \?) "Sure."
-      "Whatever.")))
+  [sentence]
+  (let [s (trimr sentence)]
+    (cond
+      (empty? s) "Fine. Be that way!"
+      (upper? s) (if (ends-w-? s)
+                   "Calm down, I know what I'm doing!"
+                   "Whoa, chill out!")
+      (ends-w-? s) "Sure."
+      :else "Whatever.")))
