@@ -1,21 +1,20 @@
 (ns bob
-  (:require [clojure.string :refer [trimr upper-case]]))
+  (:require [clojure.string :refer [trimr upper-case ends-with?]]))
+
+(defn shouting? [s]
+  (and (= s (upper-case s))
+       (re-find #"[a-zA-Z]+" s)))
 
 
-(defn upper? [s]
-  (= s (str/upper-case s)))
+(defn question? [s]
+  (ends-with? s "?"))
 
 
-(def ends-w-? #(= (last %) \?))
-
-
-(defn response-for
-  [sentence]
+(defn response-for [sentence]
   (let [s (trimr sentence)]
     (cond
       (empty? s) "Fine. Be that way!"
-      (upper? s) (if (ends-w-? s)
-                   "Calm down, I know what I'm doing!"
-                   "Whoa, chill out!")
-      (ends-w-? s) "Sure."
+      (and (shouting? s) (question? s)) "Calm down, I know what I'm doing!"
+      (shouting? s) "Whoa, chill out!"
+      (question? s) "Sure."
       :else "Whatever.")))
